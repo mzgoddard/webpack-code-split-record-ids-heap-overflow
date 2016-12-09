@@ -30,10 +30,11 @@ module.exports = {
       options: {
         context: __dirname,
         babel: {
-          presets: ['latest', 'react'],
+          presets: [['latest', {es2015: {modules: false}}], 'react'],
           plugins: ['code-split-component/babel'],
         },
       },
     }),
+    new (require('html-webpack-plugin'))(),
   ],
 };
