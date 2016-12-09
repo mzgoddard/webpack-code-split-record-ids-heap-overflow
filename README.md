@@ -4,5 +4,5 @@
 npm install
 npm run build
 npm run build
-// Get a Node heap overflow.
+# Get a Node heap overflow.
 ```
