@@ -11,6 +11,7 @@ module.exports = {
     path: 'dist',
     filename: '[name]-[hash].js',
   },
+  // Save and use module and chunk id records from previous runs.
   recordsPath: __dirname + '/tmp/records.json',
   module: {
     loaders: [
@@ -23,7 +24,7 @@ module.exports = {
   },
   plugins: [
     new (require('code-split-component/webpack'))(),
-    new webpack.optimize.CommonsChunkPlugin('vendor'),
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: '[name]-[hash].js'}),
     new webpack.LoaderOptionsPlugin({
       test: /\.jsx?$/,
       options: {
